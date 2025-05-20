@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class CadastrarAluno {
+public class AlunoService {
 	List<Aluno> alunos = new ArrayList<>();
 	
-	public void adicionarAluno() {
+	public void adicionarAluno(Integer id, String nome, String email, int idade, List<Double> notas) {
 		alunos.add(new Aluno());
-		System.out.println("Livro adicionado com sucesso!");
+		System.out.println("Aluno adicionado com sucesso!");
 	}
 	
 	public void buscarAluno(String nome) {
@@ -17,7 +17,7 @@ public class CadastrarAluno {
 		boolean encontrado = false;
 		while(iterator.hasNext()) {
 			if(iterator.next().getNome().equalsIgnoreCase(nome)) {
-				iterator.toString();
+				System.out.println(iterator);
 				encontrado = true;
 			}
 		}
@@ -33,6 +33,7 @@ public class CadastrarAluno {
 			if(iterator.next().getNome().equalsIgnoreCase(nome)) {
 				iterator.remove();
 				encontrado = true;
+				break;
 			}
 		}
 		if (!encontrado) {
@@ -41,7 +42,7 @@ public class CadastrarAluno {
 	}
 	
 	public void listarAluno() {
-		if(alunos.isEmpty() == false) {
+		if(!alunos.isEmpty()) {
 			for (Aluno aluno : alunos) {
 				System.out.println(aluno);
 			}

@@ -16,7 +16,7 @@ public class Aluno {
 		this.nome = nome;
 		this.email = email;
 		this.idade = idade;
-		this.notas = notas;
+		this.notas = new ArrayList<>(notas);
 	}
 	
 	public Integer getId() {
@@ -48,21 +48,20 @@ public class Aluno {
 		notas.add(nota);
 	}
 	public double calcularMedia() {
+		if(notas.isEmpty()) {
+			return 0;
+		}
 		double soma = 0;
-		for (int i = 0; i < notas.size(); i++) {
-			soma += notas.get(i);
+		for (Double nota : notas) {
+			soma+=nota;
 		}
 		return soma/notas.size();
 	}
-	public boolean verificarAprovacao() {
-		if (calcularMedia() >= 7) {
-			return true;
-		} else {
-			return false;
-		}
+	public boolean isAprovado() {
+		return calcularMedia() >= 7;
 	}
 	
 	public String toString() {
-		return "Id: " + id + ", Nome: " + nome + ", Email: " + email + ", Idade: " + idade;
+		return "Id: " + id + ", Nome: " + nome + ", Email: " + email + ", Idade: " + idade + ", Média: " + calcularMedia() + ", Status: " + isAprovado();
 	}
 }
