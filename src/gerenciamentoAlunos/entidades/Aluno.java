@@ -62,6 +62,7 @@ public class Aluno {
 	}
 	
 	public String toString() {
-		return "Id: " + id + ", Nome: " + nome + ", Email: " + email + ", Idade: " + idade + ", Média: " + calcularMedia() + ", Status: " + isAprovado();
+		String status = isAprovado() ? "Aprovado" : "Reprovado";
+		return "Id: " + id + ", Nome: " + nome + ", Email: " + email + ", Idade: " + idade + ", Média: " + calcularMedia() + ", Status: " + status;
 	}
 }

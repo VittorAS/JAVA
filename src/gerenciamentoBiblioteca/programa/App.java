@@ -25,7 +25,9 @@ public class App {
 			System.out.println();
 			int operacao = sc.nextInt();
 			switch (operacao) {
+
 			case 1:
+
 				sc.nextLine();
 				System.out.print("Digite o título do livro: ");
 				String titulo = sc.nextLine();
@@ -43,7 +45,8 @@ public class App {
 				}
 				break;
 			case 2:
-				if (livros.isEmpty() == false) {
+
+				if (!livros.isEmpty()) {
 					for (Livro livro : livros) {
 						System.out.println(livro);
 					}
@@ -51,6 +54,7 @@ public class App {
 					System.out.println("A lista está vazia!");
 				}
 				break;
+
 			case 3:
 				Iterator<Livro> it = livros.iterator();
 				sc.nextLine();
@@ -58,21 +62,22 @@ public class App {
 				String tituloDeletar = sc.nextLine();
 				boolean encontrado = false;
 				while (it.hasNext()) {
-					if(it.next().getTitulo().equalsIgnoreCase(tituloDeletar)) {
+					if (it.next().getTitulo().equalsIgnoreCase(tituloDeletar)) {
 						it.remove();
 						System.out.println("Livro removido com Sucesso!");
 						encontrado = true;
 						break;
 					}
-				if(!encontrado) {
-					System.out.println("O Livro não foi encontrado!");
-				}
+					if (!encontrado) {
+						System.out.println("O Livro não foi encontrado!");
+					}
 				}
 				break;
+
 			case 4:
 				System.out.println("Deseja, realmente, cancelar a operação? [S|N]");
 				String selecao = sc.next();
-				if(selecao.equalsIgnoreCase("S")) {
+				if (selecao.equalsIgnoreCase("S")) {
 					continuar = false;
 				}
 			}
