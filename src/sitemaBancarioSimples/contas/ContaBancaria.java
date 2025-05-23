@@ -37,7 +37,7 @@ public abstract class ContaBancaria {
 		this.saldo = saldo;
 	}
 
-	abstract void calcularTarifaMensal();
+	public abstract void calcularTarifaMensal();
 
 	public void depositar(double valor) {
 		saldo += valor;

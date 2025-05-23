@@ -23,15 +23,17 @@ public class Banco {
 		         return;
 			}
 		}
-		contas.add(new ContaCorrente(numeroConta, titular, saldo, taxaJuros));
+		contas.add(new ContaPoupanca(numeroConta, titular, saldo, taxaJuros));
 	}
 	
-	public void buscarPorConta(String numeroConta) {
+	public ContaBancaria buscarPorConta(String numeroConta) {
 		for (ContaBancaria contaBancaria : contas) {
 			if(contaBancaria.getNumeroConta().equalsIgnoreCase(numeroConta)) {
-				System.out.println(contaBancaria.toString());
+				System.out.println(contaBancaria);
+				return contaBancaria;
 			}
 		}
+		return null;
 	}
 	
 	public void listarTodos() {

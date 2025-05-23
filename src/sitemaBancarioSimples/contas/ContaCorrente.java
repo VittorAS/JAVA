@@ -20,7 +20,7 @@ public class ContaCorrente extends ContaBancaria{
 	}
 
 	@Override
-	void calcularTarifaMensal() {
+	public void calcularTarifaMensal() {
 		if ((getSaldo()*0.15) >= 20){
 			setSaldo(getSaldo()-getSaldo()*0.15);
 		} else {

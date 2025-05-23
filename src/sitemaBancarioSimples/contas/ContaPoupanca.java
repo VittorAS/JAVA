@@ -15,7 +15,7 @@ public class ContaPoupanca extends ContaBancaria{
 	}
 	
 	@Override
-	void calcularTarifaMensal() {
+	public void calcularTarifaMensal() {
 		setSaldo(getSaldo()-5);
 	}
 	@Override
