@@ -56,4 +56,11 @@ public abstract class ContaBancaria {
 			destino.depositar(valor);
 		}
 	}
+
+	@Override
+	public String toString() {
+		return "ContaBancaria [numeroConta=" + numeroConta + ", titular=" + titular + ", saldo=" + saldo + "]";
+	}
+	
+	
 }

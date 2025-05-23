@@ -26,5 +26,18 @@ public class Banco {
 		contas.add(new ContaCorrente(numeroConta, titular, saldo, taxaJuros));
 	}
 	
+	public void buscarPorConta(String numeroConta) {
+		for (ContaBancaria contaBancaria : contas) {
+			if(contaBancaria.getNumeroConta().equalsIgnoreCase(numeroConta)) {
+				System.out.println(contaBancaria.toString());
+			}
+		}
+	}
+	
+	public void listarTodos() {
+		for (ContaBancaria contaBancaria : contas) {
+			System.out.println(contaBancaria.toString());
+		}
+	}
 	
 }

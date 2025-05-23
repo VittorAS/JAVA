@@ -27,5 +27,11 @@ public class ContaCorrente extends ContaBancaria{
 			setSaldo(getSaldo()-20);
 		}
 	}
+	@Override
+	public String toString() {
+		return "ContaCorrente [limiteChequeEspecial=" + limiteChequeEspecial + ", getNumeroConta()=" + getNumeroConta()
+				+ ", getTitular()=" + getTitular() + ", getSaldo()=" + getSaldo() ;
+	}
+	
 
 }
